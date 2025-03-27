@@ -1,0 +1,23 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\begin{document}
+	\title{Chapter\;4}
+	\date{ }
+	\maketitle
+\section{Canonical quantization}
+We quantize a field by a certain procedure:
+\par (1)We first have a lot of fields to describe the system by writing out the Lagrangian.
+\par (2)$a$ denots the index of field.Define canonical momentum by $\pi_a(x)=\frac{\partial \mathscr{L}}{\partial\dot{\phi}^a}$,Hamiltonian density is $\mathscr{H}=\pi_a \phi^a-\mathscr{L}$.
+\par (3)Construct fundamental commutators:
+\begin{align*}
+	&[\phi^a(\bm{x},t),\phi^b(\bm{y},t)]=[\pi_a(\bm{x},t),\pi_b(\bm{y},t)]=0\\&[\phi^a(\bm{x},t),\pi_b(\bm{y},t)]=i\delta_{ab}\delta(\bm{x}-\bm{y})
+\end{align*}
+\par (4)expand fields by creation and annihilation operators and express all physics by fields.
+\section{Normal ordering}
+In order to avoid vaccum divergence,we need to put all expression by normal ordering,which means we put all annihilations on the right and all creations on the left.We use square braket or colon to represent normal ordering:$$[\phi^{a1}(x_1),\phi^{a2}(x_2),\phi^{a3}(x_3),\cdots]$$or$$:\phi^{a1}(x_1),\phi^{a2}(x_2),\phi^{a3}(x_3),\cdots:$$
+\end{document}

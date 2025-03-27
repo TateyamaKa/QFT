@@ -1,0 +1,52 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{amssymb}
+\begin{document}
+	\title{Chapter\;3}
+	\date{ }
+	\maketitle
+\section{Combine causality and observable}
+In QM,observalbe is synonym to Hermitian operator.We claim that two spacelike separate Hermitian operators must commute with each other,otherwise it violates causality.Formally,let $O(x1)$ and $O(x2)$ be two Hermitian operators with $(x1-x2)^2<0$,then we must have:$$[O(x1),O(x2)]=0$$To fullfill QM and causality,we have to build up the whole theory with field operators.
+\section{Find field operator for one type of particle}
+To find proper field operator explicitly,we demand that field must satisfy:
+\par (1)$[\phi(x),\phi(y)]=0$,if $(x-y)^2<0$
+\par (2)$\phi(x)=\phi(x)^{\dagger}$,by such definition,we say that field operator is somewhat observable.
+\par (3)$e^{-iP\cdot y}\phi(x)e^{iP\cdot y}=\phi(x-y)$
+\par (4)$U(\Lambda)^{\dagger}\phi(x)U(\Lambda)=\phi(\Lambda^{-1}x)$
+\par (5)we assume that field operator can be expanded by creation and annihilation operators:
+\begin{align*}
+	\phi(x)&=\int d^3\bm{p}\,[F_{\bm{p}}(x)a_{\bm{p}}+G_{\bm{p}}(x)a_{\bm{p}}^{\dagger}]\\
+	&=\int\frac{d^3\bm{p}}{(2\pi)^32\omega_{\bm{p}}}[F_{\bm{p}}(x)\alpha_{\bm{p}}+G_{\bm{p}}(x)\alpha_{\bm{p}}^{\dagger}]
+\end{align*}
+With these five condictions,we can derivate expression for $\phi(x)$.Let $F_{\bm{p}}(0)=f_{\bm{p}}$ and $G_{\bm{p}}(0)=g_{\bm{p}}$,so we have
+	$$\phi(0)=\int\frac{d^3\bm{p}}{(2\pi)^32\omega_{\bm{p}}}[f_{\bm{p}}\alpha_{\bm{p}}+g_{\bm{p}}\alpha_{\bm{p}}^{\dagger}]$$By $U(\Lambda)^{\dagger}\phi(0)U(\Lambda)=\phi(\Lambda^{-1}0)=\phi(0)$,we have
+\begin{align*} \int\frac{d^3\bm{p}}{(2\pi)^32\omega_{\bm{p}}}[f_{\bm{p}}\alpha_{\bm{p}}+g_{\bm{p}}\alpha_{\bm{p}}^{\dagger}]&=\int\frac{d^3\bm{p}}{(2\pi)^32\omega_{\bm{p}}}[f_{\bm{p}}\alpha_{\Lambda^{-1}\bm{p}}+g_{\bm{p}}\alpha_{\Lambda^{-1}\bm{p}}^{\dagger}]\\
+	&=\int\frac{d^3\bm{p}}{(2\pi)^32\omega_{\bm{p}}}[f_{\Lambda\bm{p}}\alpha_{\bm{p}}+g_{\Lambda\bm{p}}\alpha_{\bm{p}}^{\dagger}]
+\end{align*}
+Therefore,we must have $f_{\bm{p}}=f_{\Lambda\bm{p}}$ and $g_{\bm{p}}=g_{\Lambda\bm{p}}$ for any arbitrary $\Lambda$,so we claim that $f$ and $g$ are independent of $\bm{p}$.Now $\phi$ reduces to$$\phi(0)=\int\frac{d^3\bm{p}}{(2\pi)^32\omega_{\bm{p}}}[f\alpha_{\bm{p}}+g\alpha_{\bm{p}}^{\dagger}]$$From $\phi(0)$,we get $\phi(x)$ by
+\begin{align*}
+	\phi(x) &= T(x)\phi(0)T(-x)\\&=\int\frac{d^3\bm{p}}{(2\pi)^32\omega_{\bm{p}}}[fT(x)\alpha_{\bm{p}}T(-x)+gT(x)\alpha_{\bm{p}}^{\dagger}T(-x)]\\&=\int\frac{d^3\bm{p}}{(2\pi)^32\omega_{\bm{p}}}[fe^{-ip\cdot x}\alpha_{\bm{p}}+ge^{ip\cdot x}\alpha_{\bm{p}}^{\dagger}]
+\end{align*}
+We can pick out two more fundamental quantity:
+\begin{align*}
+	\phi_{+}(x)&=\int\frac{d^3\bm{p}}{(2\pi)^22\omega_{\bm{p}}}e^{-ip\cdot x}\alpha_{\bm{p}}=\int\frac{d^3\bm{p}}{(2\pi)^{\frac{3}{2}}\sqrt{2\omega_{\bm{p}}}}e^{-ip\cdot x}a_{\bm{p}}\\
+	\phi_{-}(x)&=\int\frac{d^3\bm{p}}{(2\pi)^22\omega_{\bm{p}}}e^{ip\cdot x}\alpha_{\bm{p}}^{\dagger}=\int\frac{d^3\bm{p}}{(2\pi)^{\frac{3}{2}}\sqrt{2\omega_{\bm{p}}}}e^{ip\cdot x}a_{\bm{p}}^{\dagger}
+\end{align*}
+We can construct two and only two independent Hermitians:$$\phi_1(x)=\phi_{+}(x)+\phi_{-}(x)\, , \,\phi_2(x)=i(\phi_{+}(x)-\phi_{-}(x))$$
+Now to fullfill condiction(1),there are two probabilities:
+\par $Probability\;A$:$\phi_1(x)$ and $\phi_2(x)$ commute with each other.Any combination $a\phi_{1}(x)+b\phi_{2}(x)$ with a,b real is observable.
+\par $Probability\;B$:only one combination of $e^{i\theta}\phi_+(x)+e^{-i\theta}\phi_{-}(x)$,for one particular real $\theta$,is observable.If we consider redefinition $a_{\bm{p}}\rightarrow e^{i\theta}a_{\bm{p}}$ and $a_{\bm{p}}^{\dagger}\rightarrow e^{-i\theta}a_{\bm{p}}^{\dagger}$,nothing about physics will change as nothing is different when add a phase factor after we create or annihilate a state(more precisely,particle).Therefore,we can rephrase this probability:only $\phi(x)=\phi_{+}(x)+\phi_{-}(x)$ is observable.
+\par For spacelike separate $x$ and $y$,we compute $$[\phi_{1}(x),\phi_{2}(y)]$$and find it non-zero,so we can only turn to $Probability\; B$ which turns out to be correct,namely $[\phi(x),\phi(y)]=0$,which guaranteen $\phi(x)$ to be an qualified observable.
+\par Eventually,field operator for single-type particle can only be$$\textcolor{green}{\phi(x)=\int\frac{d^3\bm{p}}{(2\pi)^{\frac{3}{2}}\sqrt{2\omega_{\bm{p}}}}(e^{-ip\cdot x}a_{\bm{p}}+e^{ip\cdot x}a_{\bm{p}}^{\dagger})}$$
+\section{Properties of $\phi(x)$}
+One can easily check that field operator satisfies K-G equation:$$(\Box^2+m^2)\phi(x)=0$$
+\par we now try to replace condiction(1) with two more commonly used and equivalent commutators.It is obvious that$$(\Box_{x}^{2}+m^2)[\phi(x),\phi(y)]=0$$where $\Box_{x}$ means manipulating oer label $x$ leaving label $y$ aside.This is a second order differential linear equation,so its solution,namely $[\phi(x),\phi(y)]$ can be uniquely determined by proper initial conditions,say
+\begin{align*}
+	[\phi(\bm{x},t),\phi(\bm{y},t)]&=0\\
+	[\dot{\phi(\bm{x},t)},\phi(\bm{y},t)]&=-i\delta(\bm{x}-\bm{y})
+\end{align*}
+Where the dot above $\phi(\bm{x},t)$ represents time derivatives.The upper two equalities can be explicitly calculated by definition of $\phi(x)$.These two commutators are equivalent to condiction(1) as knowing one hand will automatically konw the other hand.
+\end{document}
