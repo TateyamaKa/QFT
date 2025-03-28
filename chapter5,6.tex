@@ -1,0 +1,117 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\begin{document}
+	\title{Chapter\;5,6}
+	\date{ }
+	\maketitle
+\section{symmetry and Noether current}
+Let $D\mathscr{L}$ be change under infinitesimal transformation $D\phi^a(x)$.Recall that$$D\phi^a=\frac{d(\phi^a(x,\lambda)-\phi^a(x))}{d\lambda}\Big|_{\lambda=0}$$
+If$$D\mathscr{L}=\partial_{\mu}F^{\mu}$$
+then we have the Noether current:$$J^{\mu}=\pi^{\mu}_aD\phi^a-F^{\mu}$$
+which satisfies $\partial_{\mu}J^{\mu}=0$.However,$J^{\mu}$ is not uniquely determined.Let $A^{\mu\nu}$ be an antisymmetric tensor,so we have $\partial_{\mu}(F^{\mu}+\partial_{\nu}A^{\mu\nu})=\partial_{\mu}F^{\mu}$.Therefore,$$J^{\mu}-\partial_{\nu}A^{\mu\nu}$$is also Noether current.But this collection of Noether currents provide the same conservative charge.
+\par The conservative charge drawn from a Noether current is$$\int d^3\bm{x}\, J^0(x)$$which can prove to be Lorentz invariant.
+\section{external symmetry}
+External symmetries that are mostly talked about are Poincare symmetries,which can be devided into translation and Lorentz transformation. 
+\subsection{translation}
+If $\mathscr{L}$ has translation symmetry,then we will have four Noether currents which form a tensor:$$T^{\rho\mu}=\pi^{\mu}_a\partial^{\rho}\phi^a-g^{\rho\mu}\mathscr{L}$$
+where $\rho$ indicates the ordinal of currents,and $\mu$ indicates the component index of one current.
+\subsection{Lorentz transformation}
+If $\mathscr{L}$ has Lorentz symmetry,then we will have 6 independent Noether currents,which form a tensor:$$M^{\sigma\rho\mu}=x^{\sigma}T^{\rho\mu}-x^{\rho}T^{\sigma\mu}$$
+Where $M^{\sigma\rho\mu}$ is antisymmetry with respect to indexes $\sigma$ and $\rho$,which also indicate the ordinal of currents.$\mu$ indicates the component index of one current.
+\section{internal symmetry}
+internal symmetry is Lagrangian invariance when transformation is performed directly among fields but not space time.We don't move fields along space time but along 'field space'.
+\par eg.Let $$\mathscr{L}=\frac{1}{2}(\partial^{\mu}\phi^a\partial_{\mu}\phi^a-m^2\phi^a\phi^a)$$where we sum over $a$ for $a=1,2$.Then we take transformation
+\begin{align*}
+	&\phi^1\rightarrow\phi^1cos(\lambda)-\phi^2sin(\lambda)\\
+	&\phi^2\rightarrow\phi^1sin(\lambda)+\phi^2cos(\lambda)
+\end{align*}
+and it is checked to be an internal symmetry for $\mathscr{\Lambda}$,where we don't move fields along space time at all.
+\section{anti-unitary and unitary operators}
+Let $(\cdot,\cdot)$ denote the inner product in Hilbert space.Say $U$ is an unitary operator and $\Omega$ is an anti-unitary operator,then they're defined as
+\begin{align*}
+	&(Ua,Ub)=(a,b)\\
+	&(\Omega a,\Omega b)=(b,a)=(a,b)^*
+\end{align*}
+where $a$ and $b$ are vectors in Hilbert space.Define $K$ an operator taking conjugation of an objective:$$K\psi\equiv\psi^*$$where $\psi$ can be either a comlpex number or a vector in Hilbert space.We can check that $K$ is an anit-unitary operator:$$K(\psi_1,\psi_2)=(\psi_1^*,\psi_2^*)=(\psi_1,\psi_2)^*$$which is exactly the definition of anti-unitary operator.
+\par We can prove that any anti-unitary operator $\Omega$ can be produced by an unitary operator $U$ via$$\Omega=KU$$and vice versa.
+\par vertor $a$ transformation drawn by unitary operator $U$ and anti-unitary operator $\Omega$ are
+\begin{align*}
+	&a\rightarrow Ua\\
+	&a\rightarrow \Omega a
+\end{align*}
+\par  matrix or operator $A$ transoformation drawn by unitary operator $U$ and anti-unitary operator $\Omega$ are
+\begin{align*}
+	&A\rightarrow U^{\dagger}AU\\
+	&A\rightarrow \Omega^{-1}A\Omega
+\end{align*}
+Note that we have not defined anything like $\Omega^{\dagger}$,so we just use $\Omega^{-1}$.Besides,$\Omega^{\dagger}\ne\Omega^{-1}$.
+\par eg. say $\Omega$ is an anti-unitary,consider that $i$ can be treated as $iI$,where $I$ is identity matrix,then we have $\Omega^{-1} i\Omega=i^*=-i$.
+\section{discrete symmetry}
+Unlike continous transformation,discrete transformation is not induced by a continously changeing parameter. 
+\subsection{parity}
+We can construst reflection either by internal transformation or external transformation.We can make space refelction transformation:$$\phi(\bm{x},t)\rightarrow\phi(-\bm{x},t)$$which is called scalar transformation or P parity.We can also make 'field space' reflection:$$\phi(x)\rightarrow\-phi(x)$$which is called C parity.In multi-type partcles problem,this kind of parity usually has an effect of swaping particles.Or we can make 'field space' reflection coupled with space reflection:$$\phi(\bm{x},t)\rightarrow -\phi(-\bm{x},t)$$which is called pseudoscalar transformation or CP parity.
+\par General parity for a system is composite of C,P parity and squaring a parity deos't necessarily come out an 1.eg. Let
+\begin{align*}
+	\mathscr{L}=&\sum_{a=1}^{4}[\frac{1}{2}(\partial_{\mu}\phi^a)^2-\frac{1}{2}m_a^2(\phi^a)^2-h(\phi^a)^3]+\partial_{\mu}\psi^*\partial^{\mu}\psi-m^2\psi^*\psi\\&-\lambda\epsilon^{\mu\nu\rho\sigma}\partial_{\mu}\phi^1\partial_{\nu}\phi^2\partial_{\rho}\phi^3\partial_{\sigma}\phi^4[(\psi^*)^2+\psi^2]
+\end{align*} 
+Let $U_p$ be a transfomation so that it does space reflction and
+\begin{center}
+	$U_p^{\dagger}$
+\left\{
+\begin{matrix}
+	$\psi(\bm{x},t)$\\
+	$\psi^*(\bm{x},t)$
+\end{matrix}
+\right\}$U_p=$
+\left\{
+\begin{matrix}
+	$i\psi(-\bm{x},t)$\\
+	$-i\psi^*(-\bm{x},t)$
+\end{matrix}
+\right\}
+
+\end{center}
+$\mathscr{L}$ is unchanged under this parity,but squaring this parity gives out a -1(with respect to field $\psi$ and $\psi^*$).
+\subsection{time reversal}
+It is not possible to use an unitary operator to represent time reversal transformation.Otherwise,say $U$ is an unitary operator which performs a time reversal,and let $q(t)$,$p(t)$ be coordinate and momentum,then
+\begin{center}
+	$U^{\dagger}$
+\left\{
+\begin{matrix}
+	$q(0)$\\
+	$p(0)$
+\end{matrix}
+\right\}$U=$
+\left\{
+\begin{matrix}
+	$q(0)$\\
+	$-p(0)$
+\end{matrix}
+\right\}
+
+\end{center}
+Thereby we have
+\begin{align*}
+	i&=U^{\dagger}\,i\,U=U^{\dagger}[q(0),p(0)]U\\
+	&=U^{\dagger}q(0)UU^{\dagger}p(0)U-U^{\dagger}p(0)UU^{\dagger}q(0)U\\&=-(q(0)p(0)-p(0)q(0))=-[q(0),p(0)]=-i
+\end{align*}
+where conflict arises.Another contradiction is consider the Hamiltonian under time reversal
+\begin{align*}
+	&U^{\dagger}e^{-i\hat{H}t}U=e^{i\hat{H}t}\\
+	&\Rightarrow\frac{d}{dt}(U^{\dagger}e^{-i\hat{H}t}U)\Big|_{t=0}=i\hat{H}e^{i\hat{H}t}\Big|_{t=0}\\&\Rightarrow U^{\dagger}(-i\hat{H})U=i\hat{H}
+\end{align*}
+Since for an unitary transformation,we have $U^{\dagger}\,i\,U=i$,we can see that$$U^{\dagger}\hat{H}U=-\hat{H}$$which cause a problem of unboundedly low energy.
+\par In fact,a time reversal transformation must be described by an anti-unitary operator $\Omega_T$.In this sense,we can check the above two contradictions can be resolved:
+\begin{align*}
+	-i &=\Omega_T^{-1} i \Omega_T=\Omega_T^{-1}[q(0),p(0)]\Omega_T\\&=-[q(0),p(0)]=-i  
+\end{align*}
+and since $\Omega_T^{-1}\,i\,\Omega_T=i^*=-1$
+\begin{align*}
+	&\Omega_T^{-1}(-i\hat{H})\Omega_T=i\hat{H}\\&\Rightarrow i\Omega_T^{-1}\hat{H}\Omega_T=i\hat{H}\\&\Rightarrow\Omega_T^{-1}\hat{H}\Omega_T=\hat{H}
+\end{align*}
+\end{document}
