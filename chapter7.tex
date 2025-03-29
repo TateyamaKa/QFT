@@ -1,0 +1,47 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\begin{document}
+	\title{Chapter\;7}
+	\date{ }
+	\maketitle
+\section{Time order}
+Define time order symbol $T[\cdot]$:$$T[A_1(t_1)A_2(t_2)\cdots A_n(t_n)]=A_{j_1}(t_{j_1})A_{j_2}(t_{j_1})\cdots A_{j_n}(t_n)$$
+where $$t_{j_1}\geq t_{j_2}\geq\cdots t_{j_n}$$quick mnemonic is 'later on the left'.When there exists $t_{j_k}=t_{j_{k+1}}$,there is ambiguity of ordering of these two terms,but in the problem we're dealing with,these two equal time operator commute so we don't need to worry about it.
+\par One must notice that $T[\cdot]$ can only act on single one product.Operations like $T[A-B]$ are invalid.
+\section{interaction picture}
+Suppose the Hamiltonian of system can be written as$$\hat{H}=\hat{H}_0+\hat{H}_I$$where $\hat{H}_0$ is solvable part and $\hat{H}_I$ is unsolvable part which is usually interaction part.We use subscript S,I to denote quantity in Schrodinger picture and interaction picture respectively,then in interaction picture,we define states and operators as follow:
+\begin{align*}
+	&\ket{\psi(t)}_I=e^{i\hat{H}_0t}\ket{\psi(t)}_S\\
+	&A_I(t)=e^{i\hat{H}_0t}A_S(t)e^{-i\hat{H}_0t}
+\end{align*}
+Let$$\hat{H}'=e^{i\hat{H}_0t}H_Ie^{-i\hat{H}_0t}$$
+which is the interaction part of Hamiltonian in interaction picture.Then we have Schrodinger equation in interaction picture:$$i\frac{d}{dt}\ket{\psi(t)}_I=\hat{H}'\ket{\psi(t)}_I$$
+Define time evolution operator in interaction picture to be $\hat{U}_I(t_2,t_1)$ that satisfies $\ket{\psi(t_2)}_I=\hat{U}_I(t_2,t_1)\ket{\psi(t_1)}_I$,then the differential equation for $\hat{U}_I(t,t')$ is$$i\frac{\partial}{\partial t}\hat{U}_I(t,t')=\hat{H}'\hat{U}_I(t,t')$$whose solution is$$\hat{U}_I(t,t')=T[e^{-i\int_{t'}^{t}\hat{H}'(\xi)d\xi}]$$
+\section{process of scattering}
+In the scattering setting,we shoot wave pack into the potential from far past and recieve wave pack from far future.Let $\hat{H}$ be full Hamiltonian which includes the potential and $\hat{H}_0$ be free Hamiltonian.Solution to full Hamiltonian is a vector in Hilbert space $\mathscr{H}$ and solution to free Hamiltonian is a vector in Hilbert space $\mathscr{H}_0$.
+\par In $\mathscr{H}$ there exist solutions in far past and far future looking like vectors $\ket{\psi(t)}$(for far past) and $\ket{\phi(t)}$(for far future) in $\mathscr{H}_0$.Let them be $\ket{\psi(t)}^{in}$ for state that is asymptotically  $\ket{\psi(t)}$ in far past and $\ket{\phi(t)}^{out}$ for state that is asymptotically $\ket{\phi(t)}$ in far future.
+\par states in $\mathscr{H}$ evolve according to $\hat{U}_{\hat{H}}(t,t')=e^{-i\hat{H}(t-t')}$ and states in $\mathscr{H}_0$ evolve according to $\hat{U}_{\hat{H}_0}(t,t')=e^{-i\hat{H}_0(t-t')}$.By saying 'asymptotically',it actually means
+\begin{align*}
+	&\lim_{t\rightarrow -\infty}||\hat{U}_{\hat{H}_0}(t,0)\ket{\psi}-\hat{U}_{\hat{H}}(t,0)\ket{\psi}^{in}||=0\\&\lim_{t\rightarrow -\infty}||\hat{U}_{\hat{H}_0}(t,0)\ket{\phi}-\hat{U}_{\hat{H}}(t,0)\ket{\phi}^{out}||=0
+\end{align*}
+where we've defined
+\begin{align*}
+	&\ket{\psi}\equiv\ket{\psi(0)},\ket{\psi}^{in}\equiv\ket{\psi(0)}^{in}\\&\ket{\phi}\equiv\ket{\phi(0)},\ket{\phi}^{out}\equiv\ket{\phi(0)}^{out}
+\end{align*}
+\section{S-matrix}
+We define an extremely important quantity in QFT,called S-matrix:$$\bra{\phi}S\ket{\psi}\equiv\, ^{out}\braket{\phi|\psi}^{in}$$
+S-matrix obeys certain properties:
+\par (1)$S$ conserves probability,that is $S^{\dagger}S=SS^{\dagger}=1$
+\par (2)$S$ comnutes with free energy $\hat{H}_0$.Because,first,$S$ is an operator in $\mathscr{H}_0$,it turns an free state into another who has exactly the same energy,so compute$$[S,\hat{H}_0]\ket{\psi_1}=ES\ket{\psi_1}-\hat{H}_0S\ket{\psi_1}=ES\ket{\psi_1}-ES\ket{\psi_1}=0$$where $E$ is the energy of free state.Thereby we must have $[S,\hat{H}_0]=0$
+From these two properties,we can derivate the expression for $S$.We first simplify $ ^{out}\braket{\phi|\psi}^{in}$:
+\begin{align*}
+	^{out}\braket{\phi|\psi}^{in}&=\braket{^{out}_I\phi|\psi}^{in}_I=\bra{^{out}_I\phi(\infty)}\hat{U}^{\dagger}_I(0,\infty)\hat{U}_I(0,-\infty)\ket{\psi(-\infty)}^{in}_I\\&=\bra{^{out}\phi(\infty)}\hat{U}^{\dagger}_{\hat{H}_0}(0,\infty)\hat{U}^{\dagger}_I(0,\infty)\hat{U}_I(0,-\infty)\hat{U}_{\hat{H}_0}(0,-\infty)\ket{\psi(-\infty)}^{in}\\&=\bra{\phi(\infty)}\hat{U}^{\dagger}_{\hat{H}_0}(0,\infty)\hat{U}^{\dagger}_I(0,\infty)\hat{U}_I(0,-\infty)\hat{U}_{\hat{H}_0}(0,-\infty)\ket{\psi(-\infty)}\\&=\bra{\phi}\hat{U}_I(\infty,-\infty)\ket{\psi}=\bra{\phi}S\ket{\psi}
+\end{align*}
+Therefore,we find that$$S=\hat{U}_I(\infty,-\infty)=T[e^{-i\int_{t'}^{t}\hat{H}'(\xi)d\xi}]$$
+\end{document}
