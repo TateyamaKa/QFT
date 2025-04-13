@@ -70,6 +70,7 @@ Now.the first term in the square braket in scarttering amplitude is still associ
 It is believed that this term can be associated with some Yukawa potential with range R and $$\frac{1}{R^2}=\mu^2-(\sqrt{|p|^2+\mu^2}-\sqrt{|p|^2+m^2})^2$$which is dependent of energy of incoming nucleon and meson.
 \par Therefore,the NR picture for this term is meson and nucleon interact via an energy dependent Yukawa potential.
 \section{crossing symmetry}
+\subsection{s,t,u channels}
 Yukawa potential,exchange Yukawa potential and energy eigenstate pole are actually different aspects of one same thing.This can be viewed as some symmetry called crossing symmetry.(different from Noether symmetry which is associated with conservative quantity.)
 \par Consider the most general 4 particles system.Let 4 inward lines represent 4 types of particles equipped with its own momentum.
 \begin{figure}[htbp]
@@ -87,7 +88,7 @@ This diagram can be read from 3 directions and each direction is corresponding t
 Of course,there are other three process,but they can be found via CPT transformation of above three.There are some rules for this diagram
 \par (1)momenta conservation:$p_1+p_2+p_3+p_4=0$
 \par (2)positive energy(zeroth component of p) corresponds to incoming particle and negative energy corresponds to outgoing particle.
-\par To describe scattering,only two parameters are needed,energy and scattering angle.Now,however,define three quantities
+\par To describe scattering,only two parameters are needed,energy and scattering angle.Now,however,define three quantities and hopefully,all scattering quantities can be expressed by composite of them.
 \begin{align*}
 	&s=(p_1+p_2)^2=(p_3+p_4)^2\\
 	&t=(p_1+p_3)^2=(p_2+p_4)^2\\
@@ -124,4 +125,61 @@ where $s,t,u$ are directed distance from piont $\bm{r}$ to corresponding base li
 \end{figure}
 
 Note that given a point,namely a set of (s,t,u),it does not have to correspond to a real physical process.The threshold and region of a,say,s-channel process can be complex,if the particles are quite different.
+\par eg.Let mass of all particles be 1.Then in center-of-momentum frame,$$s=(p1+p2)^2=(E_1+E_2)^2\ge(m_1+m_2)^2=4$$where $E_i=\sqrt{p_i^2+m^2_i}\ge m_i$ is considered.So for a physical s-channel process,s is at least 4,so and so for t-channel and u-channel.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{15.png}
+	\caption{$m_r$=1 case}
+\end{figure}
+\subsection{non-relativistic correspondence}
+Different amplitude explanations are actually different channel process and different amplitude expressions are actually one same meromorphic function confined in different regions.
+\par eg.Consider five particles process
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.3\textwidth,height=0.05\textheight]{16.png}
+	\caption{five particles process}
+\end{figure}
+
+Consider s-channel,it gives a term proportional to$$\frac{1}{(p_1^2+p_2^2)^2-m_5^2}=\frac{1}{s^2-m^2_5}$$where energyeigenstate is found.Consider t-channel,s now becomes energy transfer,and the pole is now caused by energy transfer,which is interpreted as Yukawa potential.Consider u-channel,s now becomes cross energy transfer,and the pole is now caused by cross energy tranfer,which is interpreted as exchange Yukawaa potential.
+
+\section{CPT symmetry}
+CPT is shorten for composit of charge conjugation,parity and time reversal.If the world is Lorentz invariant,then any theories shall not violate CPT symmetry,namely phisical process does not change under CPT transformation.
+\par eg.Consider an s-channel process $1+2\rightarrow\bar{3}+\bar{4}$,whose amplitude is $$A_{fi}=A(p_1,p_2,-p_3,-p_4)$$.Under CPT transformation,the process goes through a series of changes
+\begin{align*}
+	&1+2\rightarrow\bar{3}+\bar{4}\\
+	\overset{C}{\rightarrow}&\bar{1}+\bar{2}\rightarrow3+4\\
+	\overset{T}{\rightarrow}&3+4\rightarrow\bar{1}+\bar{2}(with\;incoming\;paricles\;opposite\;momentum)\\
+	\overset{P}{\rightarrow}&3+4\rightarrow\bar{1}+\bar{2}(with\;incoming\;paricles\;aligned\;momentum)
+\end{align*}
+If the world is Lorentz invariant,then CPT says$$A(p_1,p_2,-p_3,-p_4)=A(-p_1,-p_2,p_3,p_4)$$That is amplitude does not change under $p_r\leftrightarrow-p_r$.
+
+\section{differential transition rate}
+\subsection{box-normalization}
+First consider box-normalization case where momentum are discrete and 
+\begin{align*}
+	&\braket{\bm{p}|\bm{p}'}=\delta_{\bm{p}\bm{p}'}\\
+	&[a_{\bm{p}},a^{\dagger}_{\bm{p}'}]=\delta_{\bm{p}\bm{p}'}
+\end{align*}
+Now a field is expanded as$$\psi(x)=\sum_{\bm{p}}\frac{1}{\sqrt{V}}\frac{1}{\sqrt{2E_{\bm{p}}}}(b_{\bm{p}}e^{-ip\cdot x}+c^{\dagger}_{\bm{p}}e^{ip\cdot x})$$
+of which scalar is just a special case where $b_{\bm{p}}=c_{\bm{p}}=a_{\bm{p}}$.
+\par transition probability is defined as $|\bra{f}(S-1)\ket{i}|^2$.Subtracting $1$ is because only interaction part is interesting.Now only consider the case where initial state is either one particle state $\ket{\bm{p}}$ or two particles state $\ket{\bm{p_1},\bm{p_2}}$.But if it is two particles state,it is inappropriate to let $\ket{i}=\ket{\bm{p}_1,\bm{p}_2}$.Instead,let $\ket{i}=\sqrt{V}\ket{\bm{p}_1,\bm{p}_2}$ so that the final results of amplitude make sense.Let $\ket{f}$ be final states,which can be multiparticle state.Suppose$$\bra{f}S-1\ket{i}=iA_{fi}^{VT}(2\pi)^4\delta^{(4)}_{VT}(p_f-p_i)\prod_{final}[\frac{1}{\sqrt{2E_f}}\frac{1}{\sqrt{V}}]\prod_{initial}[\frac{1}{\sqrt{2E_i}}]\frac{1}{\sqrt{V}}$$
+where $p_f$ is total momentum of pariticles after scattering,$p_i$ is totoal momentum of incoming particles,products go through all incoming and outgoing particles,V,T are box volume and interaction duration,and $\delta^{(4)}_{VT}$ is some sort of peaked function center at origin$$\delta^{(4)}_{VT}(p)=\frac{1}{(2\pi)^4}\int_V d^3\bm{x}\int_{-\frac{T}{2}}^{\frac{T}{2}} dtf(t)e^{ip\cdot x}$$Hopefully,it is demanded that
+\begin{align*}
+	&\lim_{V,T\rightarrow\infty}\delta^{(4)}_{VT}(p)=\delta^{(4)}(p)\\
+	&\lim_{V,T\rightarrow\infty}A_{fi}^{VT}=A_{fi}
+\end{align*}
+One can verify that$$\lim_{V,T\rightarrow\infty}[(2\pi)^4\delta^{(4)}_{VT}(p)]^2=(2\pi)^4VT\delta^{(4)}(p)$$
+\subsection{momentum state density}
+Given a momentum $\bm{p}$,how many states within momentum range $\bm{p}\sim\bm{p}+d\bm{p}$ can be found?This is a question answered by statistic physics and it turns out to be $\frac{Vd^3\bm{p}}{(2\pi)^3}$.Therefore,differential transition probability can be found to be
+\begin{align*}
+\left(\substack{\text{differential transition}\\ \text{probability}}\right)=&\left(\substack{\text{transition}\\ \text{probability}}\right) \times\prod_{final}\frac{Vd^3\bm{p}_f}{(2\pi)^3} \\=&|\bra{f}S-1\ket{i}|^2\times\prod_{final}\frac{Vd^3\bm{p}_f}{(2\pi)^3}
+\end{align*}
+Put everything together
+\begin{align*}
+	\left(\substack{\text{differential transition}\\ \text{probability}}\right)=&|A_{fi}^{VT}|^2(2\pi)^4VT\delta^{(4)}(p_f-p_i)\\
+	\times&\prod_{final}[\frac{1}{2E_f}\frac{1}{V}\frac{Vd^3\bm{p}_f}{(2\pi)^3}]\prod_{initial}[\frac{1}{2E_i}]\frac{1}{V}\\=&|A_{fi}^{VT}|^2(2\pi)^4\delta^{(4)}(p_f-p_i)\\
+	\times&\prod_{final}[\frac{1}{2E_f}\frac{d^3\bm{p}_f}{(2\pi)^3}]\prod_{initial}[\frac{1}{2E_i}]\times T
+\end{align*}
+everything about box volume has gone away.Divided $T$ both side and let $V,T\rightarrow\infty$,define$$\left(\substack{\text{differential transition}\\ \text{probability}\\ \text{per unit time}}\right)=|A_{fi}|^2D\prod_{initial}[\frac{1}{2E_i}]$$
+Where $D$ is the relativistic density of final state:$$D=(2\pi)^4\delta^{(4)}(p_f-p_i)\prod_{final}\frac{d^3\bm{p}_f}{(2\pi)^22E_f}$$
 \end{document}
