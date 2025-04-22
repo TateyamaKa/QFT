@@ -22,7 +22,7 @@ $$\tilde{G}^{(n)}(k_1,\cdots,k_n)=\text{sum of all diagrams with n external meso
 
 then
 \begin{align*}
-	\tilde{G}^{(4)}(k_1,k_2,k_3,k_4)&=(2\pi)^4\delta^{(4)}(k1_+k_3)\frac{i}{k_1^2-m^2+i\epsilon}\\&\times(2\pi)^4\delta^{(4)}(k_2+k_4)\frac{i}{k_4^2-m^2+i\epsilon}\\&+\text{permutation terms}+\text{higher order terms}
+	\tilde{G}^{(4)}(k_1,k_2,k_3,k_4)&=(2\pi)^4\delta^{(4)}(k_1+k_3)\frac{i}{k_1^2-m^2+i\epsilon}\\&\times(2\pi)^4\delta^{(4)}(k_2+k_4)\frac{i}{k_4^2-m^2+i\epsilon}\\&+\text{permutation terms}+\text{higher order terms}
 \end{align*}
 Generally,for an n point Green function,conventions are summarized to be
 \begin{figure}[htbp]
@@ -82,5 +82,6 @@ Now claim two things that can prove without much efforts:
 	&\bra{k}\phi'^f(t)\ket{\Omega}=F(\bm{k})
 \end{align*}
 for any 4-momenum $k$.Thus$$\phi'^f(t)\ket{\Omega}=\ket{f}$$ $\phi'^f(t)$ acts like a creation operator for normalized state $\ket{f}$.
-\par Futhermore,one can prove that for any state $\ket{\psi}$:$$\lim_{t\rightarrow\pm\infty}\bra{\psi}\phi'^f(t)\ket{\Omega}=\braket{\psi|f}$$Therefore,$\phi'^f(t)$ indeed is the creation operator that creates normalized state $\ket{f}$ in distant past or future.One can create any kind of such state as long as choosing $f(x)$ properly. 
+\par Futhermore,one can prove that for any state $\ket{\psi}$:$$\lim_{t\rightarrow\pm\infty}\bra{\psi}\phi'^f(t)\ket{\Omega}=\braket{\psi|f}$$Therefore,$\phi'^f(t)$ indeed is the creation operator that creates normalized state $\ket{f}$ in distant past or future.One can create any kind of such state as long as choosing $f(x)$ properly. Taking adjoint both side,thus$$\lim_{t\rightarrow\pm\infty}\bra{\Omega}\phi'^{f\dagger}\ket{\psi}=\braket{\psi|f}$$
+\par This "creation operator" can not only act on $\ket{\Omega}$,but also other multi-particle state,as long as in the context of $t\rightarrow\pm\infty$,as a result of casuality.For example,$$\lim_{t\rightarrow\pm\infty}\bra{\psi}\phi'^{f_2}\ket{f_1}=\braket{\psi|f_1,f_2}$$
 \end{document}
